@@ -640,7 +640,7 @@ var FlightService = /** @class */ (function () {
         this.http = http;
     }
     FlightService.prototype.getFlight = function (source, destination, from, to) {
-        return this.http.get('http://localhost:8081/api/flights/?source=' + source + '&dest=' + destination + '&from=' + from + '&to=' + to);
+        return this.http.get('/api/flights/?source=' + source + '&dest=' + destination + '&from=' + from + '&to=' + to);
         // return this.http.get<flight[]>('http://localhost:8081/api/flights/?source=Hawaii&dest=Alabama');
     };
     FlightService = __decorate([
