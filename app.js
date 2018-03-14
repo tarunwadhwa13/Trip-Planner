@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const cors = require('cors')
 
 var corsOptions = {
-  origin: 'https://localhost:4200',
+  origin: '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 }
 
@@ -27,9 +27,5 @@ app.route('/api/flights/').get((req, res) => {
 
 
 
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
+var server = app.listen(process.env.PORT || 8081);
    
-   console.log("Example app listening at http://%s:%s", host, port)
-})
