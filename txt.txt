@@ -1,0 +1,1 @@
+mongoimport --db Rome-2-Rio --collection IATA --drop --file IATANormalised.json

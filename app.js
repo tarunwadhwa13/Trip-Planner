@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+var routes = require('./routes')
+
+
 var cookieParser = require('cookie-parser')
 
 app.use(cookieParser())
@@ -18,12 +21,8 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 app.use("/",express.static('public'));
+app.use("/api",routes);
 
-app.route('/api/flights/').get((req, res) => {
-  res.send({
-    flight: [{ source: 'Hawaii' ,  destination: 'Alabama',arrival_time:"22:50",departure_time: "00:15", cities:"New Delhi, Dubai", total_time_taken:"01:45" }]
-  });
-});
 
 
 
