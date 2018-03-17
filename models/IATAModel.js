@@ -7,19 +7,19 @@ var airportSchema = new Schema({
     code:String,
     worldareacode:String,
     country:String,
-    longitude,
-    latitude,
-    airportname,
-    gmt
+    longitude:String,
+    latitude:String,
+    airportname:String,
+    gmt:String
 })
 
 // {'city': 'Arrabury', 'code': 'AAB', 'worldareacode': '802', 'country': 'Australia', 'longitude': '141.0', 'latitude': '-26.75', 'airportname': 'Arrabury', 'gmt': '+10.0'
 // }
 
-var IATAModel = mongoose.model('airportDetails', airportSchema );
+var IATA = mongoose.model('IATAModel', airportSchema,'IATA');
 
 /*
 GET = IATAModel.findOne('city':source,'_id':0)
 */
 
-module.exports = IATAModel
+module.exports = IATA;
